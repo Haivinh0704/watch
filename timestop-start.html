@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm đông hồ</title>
+    <link rel="stylesheet" href="SASS/stopwatch.css">
+
+
+</head>
+<body>
+    <script>
+        window.onload = function () {
+
+            var second = 00;
+            var firt = 00;
+            var appendfirt = document.getElementById("firt")
+            var appendSeconds = document.getElementById("second")
+            var Start = document.getElementById('Start');
+            var Stop = document.getElementById('Stop');
+            var Reset = document.getElementById('Reset');
+            var Interval ;
+
+
+            Start.onclick = function() {
+
+                clearInterval(Interval);
+                Interval = setInterval(startTimer, 10);
+            }
+            Stop.onclick = function() {
+                clearInterval(Interval);
+            }
+
+
+            Reset.onclick = function() {
+                clearInterval(Interval);
+                firt = "00";
+                second = "00";
+                appendfirt.innerHTML = firt;
+                appendSeconds.innerHTML = second;
+            }
+            if(firt < 15) {
+                function startTimer() {
+                    second++;
+                    if (second < 9) {
+                        appendSeconds.innerHTML = "0" + second;
+                    }
+                    if (second > 9) {
+                        appendSeconds.innerHTML = second;
+                    }
+                    if (second > 99) {
+                        console.log("firt");
+                        firt++;
+                        appendfirt.innerHTML = "0" + firt;
+                        second = 0;
+                        appendSeconds.innerHTML = "0" + 0;
+                    }
+                    if (firt > 9) {
+                        appendfirt.innerHTML = firt;
+                    }
+
+                }
+            }
+
+
+
+
+        }
+
+
+    </script>
+
+    <div class = "container">
+        <h1>STOPWATCH</h1>
+        <h2>VANILA JAVASCRIP STOPWATCH</h2>
+        <p><span id="firt">00</span>:<span id="second">00</span></p>
+        <div class="control">
+            <input type="button" class = "btn" value="Start" id="Start">
+            <input type="button" class = "btn" value="Stop" id="Stop" >
+            <input type="button" class = "btn" value="Reset" id="Reset">
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>

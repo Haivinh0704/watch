@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watch Time </title>
+</head>
+<body>
+<script>
+    function showtime() {
+
+
+        var date = new Date()
+        var x, y, z, a ="AM";
+        x = date.getHours();        //0-23
+        y = date.getMinutes();       // 0 -59
+        z = date.getMilliseconds(); // 0 - 59
+        var time = x + ":" + y + ":" + z + a;
+        var show =  document.getElementById("showtime");
+
+        if (x < 10) {
+            x = "0" + x
+        }
+
+        if (y < 10) {
+            y = "0" + y
+        }
+
+        if (z < 10) {
+            z = "0" + z
+        }
+        if (x > 12) {
+            a = "PM";
+            x = x - 12;
+        }
+        if (x == 0) {
+            x = 12
+        }
+        document.write(typeof timesd )
+        document.write(time);
+        show.innerText = time;
+        // show.textContent = time;
+        setTimeout(showtime,1000);
+    }
+    showtime();
+
+</script>
+
+
+
+    <div class="showtime" id="showtime" onload="showtime()"></div>
+    <div id="result"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

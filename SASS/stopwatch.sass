@@ -1,0 +1,33 @@
+$color : #CCC
+
+body,
+html
+  margin: 0
+  padding: 0
+  background-color: $color
+
+.container
+  text-align: center
+
+  .btn
+    margin: 10px 10px 20px
+    background-color: #f4511e
+    border: none
+    color: white
+    padding: 16px 32px
+    text-align: center
+    font-size: 16px
+    //transition-duration: -2s
+
+    opacity: 0.6
+    transition: 0.3s
+    &:hover
+      opacity: 1
+      -ms-transform: rotate(360deg)
+      transform: rotate(360deg)
+      transition-duration: 2s
+      //-webkit-transition-timing-function: ease-in-out
+
+
+
+

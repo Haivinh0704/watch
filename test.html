@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test js String</title>
+</head>
+<body>
+<style type="text/css">
+
+</style>
+<input type="text" placeholder="loading.........." id="fullname">
+<input type="button" value="show fullname" onclick="splitName()">
+<div id="result"></div>
+<script>
+
+
+    String.prototype.splitName =  function () {
+        var result;
+        var firtsName = this.indexOf(" ");
+        var lastName = this.lastIndexOf(" ");
+        if (firtsName > 0 && lastName >0) {
+            result = " Họ : " + this.slice(0, firtsName) + "<br/>";
+            result += " Họ lót :" + this.slice(firtsName, lastName) + "<br/>";
+            result += " Tên : " + this.slice(lastName) + "<br/>";
+            return result;
+        }else alert("ko hợp lệ")
+
+    }
+
+    function splitName() {
+        var fullName = new String();
+        fullName = document.getElementById("fullname").value;
+        document.getElementById("result").innerHTML = fullName.splitName();
+    }
+
+    </script>
+</body>
+</html>

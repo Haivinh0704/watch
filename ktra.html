@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ktra kiến thức js</title>
+</head>
+<body>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .show-img{
+        text-align: center;
+        width: 500px;
+        border: 2px solid burlywood;
+    }
+    .show-img #fullname{
+        width: 200px;
+        height: 40px;
+        border-bottom-left-radius: 10px ;
+        background-color: red;
+        margin: 10px 10px 10px 10px;
+
+    }
+</style>
+<script>
+    String.prototype.splitName =  function () {
+        var result = "<ul>";
+        var firtname = this.indexOf(" ");
+        var lastname = this.lastIndexOf(" ");
+        if(firtname >0 && lastname >0 ){
+            result += "<li>" + " Ho : "+ this.slice(0,firtname) + "</li>";
+            result += "<li>" + " Ten dem :  " + this.slice(firtname,lastname) + "</li>";
+            result += "<li>" + " Ten :  " + this.slice(lastname) + "</li>";
+            return result;
+        }else alert(" khong hop le");
+    };
+
+    function showfullname() {
+        var fullname = new String();
+        fullname = document.getElementById("chage").value;
+        document.getElementById("result").innerHTML = fullname.splitName();
+
+    }
+</script>
+<div class="show-img">
+    <input type="text" placeholder="loading..........." id="chage">
+    <input type="button" value="show" onclick="showfullname()" id="fullname" >
+    <div id="result">
+
+    </div>
+</div>
+
+</body>
+</html>
